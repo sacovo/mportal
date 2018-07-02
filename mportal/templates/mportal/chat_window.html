@@ -1,0 +1,22 @@
+{% load humanize i18n %}
+{% for sms in messages %}
+<div class="message{% if sms.incoming %} incoming{%else%} outgoing {%endif%}">
+    <div class="content">
+        {{sms.content}}
+    </div>
+    <div class="message-info">
+        {% if sms.incoming and sms.location_string %}
+        <span class="location">
+        {{sms.location_string}}
+        </span>;
+        {% endif %}
+        <span class="time">{{sms.time|naturalday:"d.M."}}, {{sms.time|date:"H:i"}}</span>
+        {% if sms.is_mass %}
+        <span class="mass">{% trans "(Massenversand)" %}</span>
+        {% endif %}
+        {% if sms.delivered %}
+        <span class="delivered">✓</span>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}

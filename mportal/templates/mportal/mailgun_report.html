@@ -1,0 +1,244 @@
+{% extends 'admin/base_site.html' %}
+{% load i18n l10n admin_urls static plots %}
+{% block extrastyle %}
+<style>
+.member-card > fieldset {
+    margin-bottom: 2px;
+}
+.recipient-list{
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+
+}
+.recipient-list li a {
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Grey background color */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    color: black; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+}
+
+.dataTables_wrapper {
+    margin-top: 2em;
+}
+.plot-container {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+</style>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.2.1/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/r-2.2.1/datatables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/r-2.2.1/datatables.min.js"></script>
+<style>
+.message-content{
+    background-color: white;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 2em;
+    margin: 1em;
+}
+.plot-container {
+    min-height: 500px;
+}
+.svg-container {
+    height: 100% !important;
+}
+
+</style>
+{% endblock %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+    &rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>
+    &rsaquo; <a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>
+    &rsaquo; <a href="{% url opts|admin_urlname:'change' message.pk %}">{{ message.subject|capfirst }}</a>
+    &rsaquo; {% trans 'Tracking' %}
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row" style="max-width:100%;">
+    <div class="col-md-6">
+        <div class="message-content">
+            {% autoescape off %}
+            {{message.content}}
+            {% endautoescape %}
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="member-card">
+                    <h4>Empfangen {{message.delivered.count}}/{{message.recipients.all.count}}</h4>
+                        <fieldset class="suit-form module extrapretty">
+                <input type="text" id="all-input" placeholder="Suchen...">
+                        </fieldset>
+                <ul class="recipient-list" id="allList">
+                    {% for m in message.delivered %}
+                    <li><a target="_blank" href="{{m.get_absolute_url}}">{{m.email}}</a></li>
+                    {% endfor %}
+                </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="member-card">
+                    <h4>Geöffnet {{message.read_count}}/{{message.delivered.count}}</h4>
+                        <fieldset class="suit-form module extrapretty">
+                <input type="text" id="got-input" placeholder="Suchen...">
+                        </fieldset>
+                <ul class="recipient-list" id="delList">
+                    {% for m in message.read %}
+                    <li><a target="_blank" href="{{m.0.get_absolute_url}}">{{m.0.email}} ({{m.1}})</a></li>
+                    {% endfor %}
+                </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="member-card">
+                <h4>Ausstehend {{message.unread.count}}</h4>
+                        <fieldset class="suit-form module extrapretty">
+                <input type="text" id="read-input" placeholder="Suchen...">
+                        </fieldset>
+                <ul class="recipient-list" id="readList">
+                    {% for m in message.unread %}
+                    <li><a target="_blank" href="{{m.get_absolute_url}}">{{m.email}}</a></li>
+                    {% endfor %}
+                </ul>
+                </div>
+            </div>
+            <div class="plot-container col-md-12">
+                {% plot_overview message.pk %}
+            </div>
+            {% if message.urls %}
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr><th>URL</th><th>{% trans "Klicks" %}</th><th>{% trans "Klicks" %} (unique)</td><tr>
+                    </thead>
+                    <tbody>
+                        {% for url in message.urls %}
+                        <tr>
+                        <td>
+                            <a href="{{url}}">{{url}}</a>
+                        </td>
+                        <td>
+                            {% click_count message.pk url %} 
+                        </td>
+                        <td>
+                            {% click_count_unique message.pk url %} 
+                        </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="plot-container col-md-12">
+                {% plot_url_clicks message.pk %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="col-md-12" style="background:white;max-width:100%;">
+        <table id="events" class="display responsive" style="width:100%">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>{% trans "E-Mail" %}</th>
+                    <th>{% trans "Event" %}</th>
+                    <th>{% trans "Zeitpunkt" %}</th>
+                    <th>{% trans "URL" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in message.mailgunevent_set.all %}
+                <tr>
+                    <td>{{event.pk}}</td>
+                    <td><a target="_blank" href="{% url 'admin:mitglieder_member_change' event.recipient.pk %}">
+                            {{event.recipient.email}}
+                        </a>
+                    </td>
+                    <td>{{event.event}}</td>
+                    <td>{{event.timestamp|date:"Y-m-d H:i"}}</td>
+                    <td>{{event.url}}</td>
+                </tr>
+                {% endfor %}
+                <tfoot>
+                <tr>
+                    <th>#</th>
+                    <th>{% trans "E-Mail" %}</th>
+                    <th>{% trans "Event" %}</th>
+                    <th>{% trans "Zeitpunkt" %}</th>
+                    <th>{% trans "URL" %}</th>
+                </tr>
+                </tfoot>
+            </tbody>
+        </table>
+        <script>
+
+$(document).ready( function () {
+    $('#events tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="{% trans "Suche" %} '+title+'" />' );
+    } );
+
+    var table = $('#events').DataTable({
+        dom: 'Bfrtip',
+        order: [[ 3, "desc" ]],
+        buttons: [
+            {
+                extend: 'collection',
+                text: 'Export',
+                buttons: [
+                    'copy',
+                    'excel',
+                    'csv',
+                    'pdf',
+                ]
+            }
+        ],
+        responsive: true
+    });
+    table.columns().every( function () {
+        var that = this;
+
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
+
+    $("#all-input").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#allList li").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+    $("#got-input").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#delList li").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+    $("#read-input").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#readlist li").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
+
+        </script>
+    </div>
+</div>
+
+{% endblock %}

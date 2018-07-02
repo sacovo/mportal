@@ -1,0 +1,24 @@
+{% extends 'admin/base_site.html' %}
+{% load i18n l10n admin_urls static %}
+
+{% block extrastyle %}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+    &rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>
+    &rsaquo; <a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>
+    &rsaquo; {{member}}
+    &rsaquo; {% trans 'Twilio Account auswählen' %}
+</div>
+{% endblock %}
+
+{% block content %}
+<p>{% trans 'Twilio Account auswählen' %}</p>
+<ul>
+{% for sender in senders %}
+<li><a href="{% url 'conversation-view' sender=sender.pk member=member %}">{{sender}}</a>
+{% endfor %}
+</ul>
+{% endblock %}

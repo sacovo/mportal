@@ -1,0 +1,7 @@
+<ul>
+    {% for m in module.members %}
+    <li>{{m.first_name}} {{m.last_name}} ({{m.age}}) - <a href="mailto:{{m.email}}">{{m.email}}</a></li>
+    {% empty %}
+    <li>Keine Geburtstage</li>
+    {% endfor %}
+</ul>

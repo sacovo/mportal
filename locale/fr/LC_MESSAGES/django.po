@@ -1,0 +1,457 @@
+# JUSO Sektionsportal Französisch.
+# Copyright (C) 2017 Sandro Covo
+# This file is distributed under the same license as the sektionsportal package.
+# Sandro Covo 2017 <scovo@juso-aargau.ch>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-14 19:55+0000\n"
+"PO-Revision-Date: 2017-03-14\n"
+"Last-Translator: Sandro Covo <scovo@juso-aargau.ch>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: mitglieder/admin.py:22 mitglieder/forms.py:65
+msgid "Gruppe"
+msgstr "Groupe"
+
+#: mitglieder/admin.py:37
+msgid "Jahrgang"
+msgstr "Année de naissance"
+
+#: mitglieder/admin.py:81 mitglieder/admin.py:213
+msgid "E-Mail verfassen"
+msgstr "Envoyer un email"
+
+#: mitglieder/admin.py:87
+#, fuzzy
+#| msgid "Excel Importieren"
+msgid "Excel exportieren"
+msgstr "Importer en format Excel"
+
+#: mitglieder/admin.py:94 mitglieder/admin.py:219
+#: mitglieder/templates/mitglieder/render_letter.html:12
+#: mitglieder/views.py:378
+msgid "Brief generieren"
+msgstr "Générer une lettre"
+
+#: mitglieder/admin.py:100 mitglieder/views.py:69
+msgid "SMS verfassen"
+msgstr "Envoyer un SMS"
+
+#: mitglieder/admin.py:154
+msgid "Verlauf anzeigen"
+msgstr "Voir l’historique"
+
+#: mitglieder/admin.py:164
+msgid "Kampagne"
+msgstr "Campagne"
+
+#: mitglieder/admin.py:181
+msgid "Gesamtbetrag"
+msgstr "Total"
+
+#: mitglieder/forms.py:17 mitglieder/forms.py:38 mitglieder/models.py:20
+msgid "Name"
+msgstr "Nom"
+
+#: mitglieder/forms.py:18 mitglieder/models.py:183
+msgid "Absender_in"
+msgstr "Expéditeur"
+
+#: mitglieder/forms.py:19
+msgid "Typ (Medienmitteilung, ...)"
+msgstr ""
+
+#: mitglieder/forms.py:20
+msgid "Betreff"
+msgstr ""
+
+#: mitglieder/forms.py:23
+msgid "Vorlage"
+msgstr ""
+
+#: mitglieder/forms.py:30 mitglieder/forms.py:46 mitglieder/models.py:33
+msgid "Status"
+msgstr "Statut"
+
+#: mitglieder/forms.py:31
+msgid "Excel"
+msgstr ""
+
+#: mitglieder/forms.py:36 mitglieder/models.py:17
+msgid "OM-Nummer"
+msgstr "Numéro-OM"
+
+#: mitglieder/forms.py:37 mitglieder/models.py:19
+#: mitglieder/templates/mitglieder/send_mail.html:49
+#: mitglieder/templates/mitglieder/send_sms.html:49
+msgid "Vorname"
+msgstr "Prénom"
+
+#: mitglieder/forms.py:39 mitglieder/models.py:21
+#: mitglieder/templates/mitglieder/send_mail.html:64
+#: mitglieder/templates/mitglieder/send_sms.html:64
+msgid "Strasse"
+msgstr "Rue"
+
+#: mitglieder/forms.py:40 mitglieder/models.py:22
+msgid "PLZ"
+msgstr "Code postal"
+
+#: mitglieder/forms.py:41 mitglieder/models.py:24
+msgid "Land"
+msgstr "Pays"
+
+#: mitglieder/forms.py:42 mitglieder/models.py:28 mitglieder/models.py:270
+#: mitglieder/templates/mitglieder/send_mail.html:79
+#: mitglieder/templates/mitglieder/send_sms.html:79 mitglieder/views.py:109
+msgid "E-Mail"
+msgstr "Courriel"
+
+#: mitglieder/forms.py:43 mitglieder/models.py:29
+msgid "Geschlecht"
+msgstr "Sexe"
+
+#: mitglieder/forms.py:44 mitglieder/models.py:30
+#: mitglieder/templates/mitglieder/send_mail.html:84
+#: mitglieder/templates/mitglieder/send_sms.html:84
+msgid "Briefanrede"
+msgstr "Salutations par écrit"
+
+#: mitglieder/forms.py:45
+msgid "Geburtstag"
+msgstr ""
+
+#: mitglieder/forms.py:47 mitglieder/models.py:25
+msgid "Telefon Privat"
+msgstr "Téléphone privé"
+
+#: mitglieder/forms.py:48 mitglieder/models.py:26
+msgid "Telefon Geschäftlich"
+msgstr "Téléphone professionnel"
+
+#: mitglieder/forms.py:49 mitglieder/models.py:27
+msgid "Mobil"
+msgstr "Natel"
+
+#: mitglieder/forms.py:55
+msgid "Spalten"
+msgstr ""
+
+#: mitglieder/forms.py:66
+msgid "Inhalt"
+msgstr ""
+
+#: mitglieder/models.py:14
+msgid "Sympi"
+msgstr ""
+
+#: mitglieder/models.py:15 mitglieder/models.py:99
+msgid "Mitglied"
+msgstr "Membre"
+
+#: mitglieder/models.py:18 mitglieder/templates/mitglieder/send_mail.html:44
+#: mitglieder/templates/mitglieder/send_sms.html:44
+msgid "Anrede"
+msgstr "Titre"
+
+#: mitglieder/models.py:23 mitglieder/templates/mitglieder/send_mail.html:74
+#: mitglieder/templates/mitglieder/send_sms.html:74
+msgid "Ort"
+msgstr "Lieux"
+
+#: mitglieder/models.py:36
+msgid "Sektion"
+msgstr ""
+
+#: mitglieder/models.py:37
+msgid "Mitgliederbeitrag bezahlt"
+msgstr "Cotisation payée"
+
+#: mitglieder/models.py:60
+msgid "Gruppen"
+msgstr "Groupes"
+
+#: mitglieder/models.py:100 mitglieder/views.py:325
+msgid "Mitglieder"
+msgstr "Membres"
+
+#: mitglieder/models.py:106
+msgid "Projektname"
+msgstr "Nom du projet"
+
+#: mitglieder/models.py:107
+msgid "Start der Sammelfrist"
+msgstr "Début de la phase de récolte"
+
+#: mitglieder/models.py:108
+msgid "Ablauf der Sammelfrist"
+msgstr "Déroulement de la phase de récolte"
+
+#: mitglieder/models.py:109
+msgid "Benötigte Unterschriften"
+msgstr "Signatures nécessaires"
+
+#: mitglieder/models.py:112
+msgid "Unterschriften-Projekt"
+msgstr ""
+
+#: mitglieder/models.py:113
+msgid "Unterschriften-Projekte"
+msgstr ""
+
+#: mitglieder/models.py:118
+msgid "Gesammelt"
+msgstr ""
+
+#: mitglieder/models.py:167
+msgid "Anzahl Unterschriften"
+msgstr ""
+
+#: mitglieder/models.py:168
+msgid "Unterschrift-Projekt"
+msgstr ""
+
+#: mitglieder/models.py:169
+msgid "Sammeldatum"
+msgstr ""
+
+#: mitglieder/models.py:179
+msgid "Unterschriftspaket"
+msgstr ""
+
+#: mitglieder/models.py:180
+msgid "Unterschriftspakete"
+msgstr ""
+
+#: mitglieder/models.py:184
+msgid "Nachricht"
+msgstr "Message"
+
+#: mitglieder/models.py:227
+msgid "Spender_in"
+msgstr ""
+
+#: mitglieder/models.py:228
+msgid "Spender_innen"
+msgstr ""
+
+#: mitglieder/models.py:265
+msgid "Datum"
+msgstr "Date"
+
+#: mitglieder/models.py:266
+msgid "Zeit"
+msgstr "Heure"
+
+#: mitglieder/models.py:267
+msgid "Text"
+msgstr "Texte"
+
+#: mitglieder/models.py:268
+msgid "Wahrheitswert"
+msgstr "Vertu du contenu"
+
+#: mitglieder/models.py:269
+msgid "Zahl"
+msgstr "Nombre"
+
+#: mitglieder/models.py:271
+msgid "URL"
+msgstr "URL"
+
+#: mitglieder/models.py:272
+msgid "Datei"
+msgstr "Données"
+
+#: mitglieder/templates/admin/base.html:48
+msgid "Welcome,"
+msgstr "Bienvenue"
+
+#: mitglieder/templates/admin/base.html:53
+msgid "View site"
+msgstr ""
+
+#: mitglieder/templates/admin/base.html:58
+msgid "Documentation"
+msgstr ""
+
+#: mitglieder/templates/admin/base.html:62
+msgid "Change password"
+msgstr ""
+
+#: mitglieder/templates/admin/base.html:64
+msgid "Log out"
+msgstr ""
+
+#: mitglieder/templates/admin/base.html:74
+#: mitglieder/templates/mitglieder/chose_template.html:9
+#: mitglieder/templates/mitglieder/collection_detail.html:5
+#: mitglieder/templates/mitglieder/import.html:9
+#: mitglieder/templates/mitglieder/render_letter.html:9
+#: mitglieder/templates/mitglieder/select_fields.html:9
+#: mitglieder/templates/mitglieder/send_mail.html:9
+#: mitglieder/templates/mitglieder/send_sms.html:9
+#: mitglieder/templates/select_fields.html:9
+msgid "Home"
+msgstr ""
+
+#: mitglieder/templates/admin/base_site.html:4
+#: mitglieder/templates/admin/base_site.html:6
+msgid "Sektionsportal"
+msgstr ""
+
+#: mitglieder/templates/admin/mitglieder/member/change_list.html:9
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: mitglieder/templates/admin/mitglieder/member/change_list.html:14
+msgid "Excel Importieren"
+msgstr "Importer en format Excel"
+
+#: mitglieder/templates/mitglieder/chose_template.html:11
+msgid "Vorlage auswählen"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/chose_template.html:16
+msgid "Template auswählen"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/collection_detail.html:8
+msgid "Projektübersicht"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/collection_detail.html:14
+#, python-format
+msgid ""
+"Es fehlen noch %(obj.missing)s Unterschiften, von insgesamt %(obj.needed)s. "
+"Es sind noch %(obj.days)s Tage bis zum Ende der Sammelfrist."
+msgstr ""
+
+#: mitglieder/templates/mitglieder/import.html:12
+msgid "Importieren"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/import.html:17
+msgid "Mitgliederliste importieren"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/render_letter.html:17
+msgid "Brief an folgende Personen generieren:"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/select_fields.html:11
+#: mitglieder/templates/mitglieder/select_fields.html:16
+#, fuzzy
+#| msgid "Vorlage wählen"
+msgid "Spalten auswählen"
+msgstr "Choisir un modèle"
+
+#: mitglieder/templates/mitglieder/send_mail.html:12
+msgid "E-Mail versenden"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/send_mail.html:17
+msgid "E-Mail an folgende Personen verfassen:"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/send_mail.html:18
+#: mitglieder/templates/mitglieder/send_sms.html:18
+msgid "Empfänger"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/send_mail.html:34
+#: mitglieder/templates/mitglieder/send_sms.html:34
+#, python-brace-format
+msgid "Verwendung:</b> <pre>{member.anrede}</pre>, <pre>{member.plz}</pre> "
+msgstr ""
+
+#: mitglieder/templates/mitglieder/send_mail.html:38
+#: mitglieder/templates/mitglieder/send_sms.html:38
+msgid "Code"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/send_mail.html:39
+#: mitglieder/templates/mitglieder/send_sms.html:39
+msgid "Bedeutung"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/send_mail.html:40
+#: mitglieder/templates/mitglieder/send_sms.html:40
+msgid "Beispiel"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/send_mail.html:45
+#: mitglieder/templates/mitglieder/send_sms.html:45
+msgid "Herr/Frau"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/send_mail.html:54
+#: mitglieder/templates/mitglieder/send_sms.html:54
+msgid "Nachname"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/send_mail.html:59
+#: mitglieder/templates/mitglieder/send_sms.html:59
+msgid "Ganzer Name"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/send_mail.html:69
+#: mitglieder/templates/mitglieder/send_sms.html:69
+msgid "Postleitzahl"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/send_mail.html:89
+#: mitglieder/templates/mitglieder/send_sms.html:89
+msgid "Handy-Nr"
+msgstr ""
+
+#: mitglieder/templates/mitglieder/send_sms.html:17
+msgid " SMS an folgende Personen verfassen "
+msgstr ""
+
+#: mitglieder/templates/select_fields.html:11
+#, fuzzy
+#| msgid "Excel Importieren"
+msgid "Excel Export"
+msgstr "Importer en format Excel"
+
+#: mitglieder/templates/select_fields.html:16
+#, fuzzy
+#| msgid "Vorlage wählen"
+msgid "Felder auswählen"
+msgstr "Choisir un modèle"
+
+#: mitglieder/views.py:269
+#, python-brace-format
+msgid "Update erfolgreich, {n} hinzugefügt und {d} gelöscht."
+msgstr "Mise à jour réussie {n} rapportée et {d} effacée"
+
+#: mitglieder/views.py:285
+#, python-brace-format
+msgid "Update erfolgreich, {p} bezahlt und {n} noch nicht."
+msgstr ""
+
+#: mitglieder/views.py:298
+msgid "Vorlage wählen"
+msgstr "Choisir un modèle"
+
+#: mitglieder/views.py:339
+#, fuzzy
+#| msgid "Vorlage wählen"
+msgid "Felder wählen"
+msgstr "Choisir un modèle"
+
+#, fuzzy
+#~| msgid "Mitgliederbeitrag bezahlt"
+#~ msgid "Mitgliederverwaltung"
+#~ msgstr "Cotisation payée"

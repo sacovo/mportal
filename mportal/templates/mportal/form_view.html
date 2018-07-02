@@ -1,0 +1,36 @@
+{% extends 'mitglieder/form_base.html' %}
+{% load i18n %}
+
+{% block content %}
+            <form id="contact" class="form" action="" method="post">
+                <h3>{{title}}</h3>
+                <p>{{description}}</p>
+                {% csrf_token %}
+                {{form.as_p}}
+                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Absenden</button>
+                <p>
+                {% blocktrans %}
+                Bei Fragen wende dich an <a href="mailto:{{portalform.contact_mail}}">
+                    {{portalform.contact_name}}
+                </a>
+                {% endblocktrans %}
+                </p>
+                {% if can_edit %}
+                <p>
+                <a href="{% url 'admin:mitglieder_portalform_change' portalform.pk %}">
+                    {% trans "Formular bearbeiten" %}</a> |
+                <a href="{% url 'form-result-view' slug=portalform.slug %}">
+                    {% trans "Resultate anzeigen" %}
+                </a>
+                </p>
+                {% endif %}
+            </form>
+                {% if answer %}
+                <form action="{% url 'send-form-link' %}" method="post" class="form" id="mailform">
+                    {% trans "Wenn du deine Antworten anschauen willst, klicke hier:"%}
+                    {% csrf_token %}
+                    <input name="pk" type="hidden" value="{{answer.pk}}"></input>
+                    <button name="submit" type="submit" id="get-mail" data-submit="...Sending">{% trans "Link anfordern" %}</button>
+                </form>
+                {% endif %}
+            {% endblock %}

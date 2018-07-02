@@ -1,0 +1,268 @@
+{% extends 'admin/base_site.html' %}
+{% load i18n l10n admin_urls static plots humanize %}
+{% block extrastyle %}
+<style>
+div.message-info {
+    font-size: 12px;
+}
+div.content{
+    border: 1px solid;
+    margin-top: 2rem;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 3px;
+    width: fit-content;
+    max-width: 80%;
+    box-shadow: 2px 2px;
+}
+div.message-scroll {
+    border: 1px solid;
+    border-radius: 2px;
+    padding: 10px;
+    background: white;
+    max-height:600px;
+    height:600px;
+    overflow-y: auto;
+}
+
+div.incoming > div.content {
+    background-color: white;
+}
+
+div.incoming span.delivered {
+    display: none;
+}
+
+div.outgoing > div.content {
+    background-color: #c3ffd1;
+}
+
+div.outgoing > div {
+    margin-left: auto;
+    max-width: 80%;
+    width: fit-content;
+}
+
+.pull-right {
+    margin-left: auto;
+    width: fit-content;
+}
+
+div.mass > div.content {
+    font-weight: bold;
+}
+
+.input-form{
+    margin-top: 0px;
+    width: 100%;
+    margin-left: auto;
+}
+.input-form textarea{
+    width: 100%;
+    padding: 10px;
+}
+.input-form button {
+    margin-left: auto;
+}
+</style>
+{% endblock %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+    &rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>
+    &rsaquo; <a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>
+    &rsaquo; {% trans 'Konversation' %}
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row" style="max-width:100%;">
+    <div class="col-md-6">
+        <h4 style="float:left">{{member}} ({{member.get_mobile}})</h4>
+        <h4 style="text-align:right">{{sender.group}} ({{sender.number}})</h4>
+        <div class="message-scroll" id="messages">
+        </div>
+        <div class="input-form">
+            <form action='' class="" method="post">
+                {% csrf_token %}
+                {{form.content}}
+                <div class="pull-right">
+                    <button class="btn btn-primary" name="submit" type="submit" >{% trans "Nachricht abschicken" %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h2>{% trans "Informationen" %}</h2>
+        <table class="table">
+            <tr>
+                <td>
+                    {% trans "Vorname"%}
+                </td>
+                <td>
+                    {{member.first_name}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% trans "Name" %}
+                </td>
+                <td>
+                    {{member.last_name}}
+                </td>
+            </tr>
+            <tr>
+                <td>{% trans "Stasse" %}
+                </td>
+                <td>
+                    {{member.street}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% trans "PLZ Ort" %}
+                </td>
+                <td>
+                    {{member.plz}} {{member.city}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% trans "Telefon privat" %}
+                </td>
+                <td>
+                    {{member.phone_priv}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% trans "Telefon geschäftlich" %}
+                </td>
+                <td>
+                    {{member.phone_busi}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% trans "Mobil" %}
+                </td>
+                <td>
+                    {{member.phone_mobi}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% trans "E-Mail" %}
+                </td>
+                <td>
+                    {{member.email}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% trans "Gender" %}
+                </td>
+                <td>
+                    {{member.get_gender_display}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% trans "Geburtstag" %}
+                </td>
+                <td>
+                    {{member.birthday|date:"d.m.Y"}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% trans "Status" %}
+                </td>
+                <td>
+                    {{member.get_status_display}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% trans "Gruppen" %}
+                </td>
+                <td>
+                    <ul>
+                        {% for group in member.position.all %}
+                        <li>{{group}}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% trans "Mitgliedschaften" %}
+                </td>
+                <td>
+                    <ul>
+                        {% for group in member.memberships.all %}
+                        <li>{{group}}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% trans "Fähigkeiten" %}
+                </td>
+                <td>
+                    <ul>
+                        {% for group in member.skills.all %}
+                        <li>{{group}}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% trans "Beschäftigungen" %}
+                </td>
+                <td>
+                    <ul>
+                        {% for group in member.occupations.all %}
+                        <li>{{group}}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% trans "Aktivitätspunkte" %}
+                </td>
+                <td>
+                    {{member.activity_points}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% trans "Mailaktivität" %}
+                </td>
+                <td>
+                    {{member.mail_activity}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(function(){
+        window.setInterval(function(){
+            $.get('{% url "chat-window" sender=sender.pk member=member.npk %}', function(data){
+                if($('#messages').html() != data){
+                    $('#messages').html(data);
+                    var objDiv = document.getElementById("messages");
+                    objDiv.scrollTop = objDiv.scrollHeight;
+                }
+            });
+        }, 500);
+    });
+</script>
+{% endblock %}

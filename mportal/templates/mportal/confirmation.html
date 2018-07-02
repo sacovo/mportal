@@ -1,0 +1,76 @@
+{% extends 'mitglieder/form_base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <form action="" method="post" class="form">
+        {% if message and not form.errors %}
+        <div class="message">
+        {% if answer.confirmed %}
+        {% if form %}
+        {% trans "Du hast deine Antwort erfolgreich bearbeitet!" %}
+        {% else %}
+        {% trans "Du hast deine Antwort erfolgreich bestätigt!" %}
+        {% endif %}
+        {% else %}
+        {% trans "Du hast deine Antwort erfolgreich widerrufen!" %}
+        {% endif %}
+        </div>
+        {% endif %}
+        <h3>{% if portalform.editable %}{% trans "Antwort bearbeiten" %}{%else%}{% if answer.confirmed %}{% trans "Antwort widerrufen"%}{% else %}{% trans "Antwort bestätigen"%}{% endif %}{% endif %}</h3>
+    <p>
+    {% trans "Folgende Daten hast du gespeichert" %}
+    <em>
+    {% if answer.confirmed %}
+    {% trans "und momentan bestätigt"%}{% else %}
+    {% trans "und monmentan nicht bestätigt" %}{% endif %}</em>:
+    </p>
+    {% if form %}
+    {{form.as_p}}
+    {% else %}
+    <table class="table">
+        <tr><th>{% trans "Frage" %}</th><th>{% trans "Anwort" %}</th></tr>
+        {% for answer in answer.answers.all %}
+        <tr>
+            <td>{{answer.form_field.label}}</td>
+            <td>{{answer.value}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+
+    {% if not answer.confirmed %}
+    <p>{% trans "Solange du deine Eingaben nicht bestätigt hast, kannst nur diese sehen." %}</p>
+    {% else %}
+    <p>{% trans "Wenn du deine Eingaben widerrufst, kann sie ausser dir niemand mehr sehen." %}</p> 
+    {% endif %}
+        {% csrf_token %}
+        <button name="submit" type="submit" id="contact-submit">
+            {% if portalform.editable %}{% trans "Änderungen speichern" %}{% else %}{% if answer.confirmed %}{% trans "Antwort Widerrufen" %}{% else %}{% trans "Antwort Bestätigen" %}{%endif%}{% endif %}
+        </button>
+                {% if can_edit %}
+                <p>
+                <a href="{% url 'admin:mitglieder_portalform_change' portalform.pk %}">
+                    {% trans "Formular bearbeiten"%}</a> |
+                <a href="{% url 'form-result-view' slug=portalform.slug %}">
+                    {% trans "Resultate anzeigen" %}
+                </a>
+                </p>
+                {% endif %}
+    </form>
+    {% if form %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#id_confirm_answer').click(function(){
+                if($(this).is(':checked')){
+                    $('#contact-submit').text('{% trans "Änderungen speichern" %}');
+                } else{
+                    $('#contact-submit').text('{% trans "Antwort widerrufen" %}');
+                }
+            });
+        });
+    </script>
+
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+{% block extrahead %}
+{{block.super}}
+{% include 'mportal/favicon.html'%}
+{% endblock %}
+
+
+{% block title %}{% trans 'MPortal' %}{% endblock %}
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{% trans 'MPortal' %}</a></h1>
+{% endblock %}
+
+{% block footer_branding %}
+<a target="_blank" href="https://bitbucket.org/sacovo/sektionsportal">Source Code auf Bitbucket</a>
+{% endblock %}
+
+{% block copyright %}
+Programmiert von <a href="https://sandrocovo.ch/">Sandro Covo</a>
+{% endblock %}
+
+{% block usertools %}
+{{block.super}}
+<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}" />
+    <fieldset class="suit-form module extrapretty" style="margin-bottom:0px;box-shadow:none;">
+    <select name="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+        {{ language.name_local }} ({{ language.code }})
+        </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="{% trans "Go" %}" class="btn"/>
+    </fieldset>
+</form>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'admin/base_site.html' %}
+{% load i18n l10n admin_urls static %}
+
+{% block extrastyle %}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>
+&rsaquo; <a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>
+&rsaquo; {% trans 'Brief generieren' %}
+</div>
+{% endblock %}
+
+{% block content %}
+<h2>{% trans 'Brief an folgende Personen generieren:' %}</h2>
+<ul style="max-height:20em;overflow-y:scroll;">
+    {% for recip in recipients %}
+    <li>{{recip.full_name}} - {{recip.street}}</li>
+    {% endfor %}
+</ul>
+<form id="e-mail" method="POST" action="" enctype="multipart/form-data">
+            <fieldset class="suit-form module aligned">
+            {{form.media}}
+            {% csrf_token %}
+            {% for hidden_field in form.hidden_fields %}
+            {{ hidden_field }}
+            {% endfor %}
+
+            {% for field in form.visible_fields %}
+            <div class="form-group row form-row">
+                <div class=" form-control-label col-xs-12 col-sm-3 col-md-2">
+                {{ field.label_tag }}
+                </div>
+                <div class=" col-xs-12 col-sm-9 col-md-8 col-lg-7">
+                {{ field }}
+                </div>
+                {% if field.help_text %}
+                <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+            </div>
+            {% endfor %}
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}

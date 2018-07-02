@@ -1,0 +1,1062 @@
+# JUSO Sektionsportal Französisch.
+# Copyright (C) 2017 Sandro Covo
+# This file is distributed under the same license as the sektionsportal package.
+# Sandro Covo 2017 <scovo@juso-aargau.ch>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-05 12:29+0200\n"
+"PO-Revision-Date: 2017-03-14\n"
+"Last-Translator: Sandro Covo <scovo@juso-aargau.ch>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: admin.py:52 models.py:199 models.py:222
+msgid "Sektion"
+msgstr "Section"
+
+#: admin.py:70
+msgid "Jahrgang"
+msgstr "Année de naissance"
+
+#: admin.py:102 forms.py:53 models.py:65 models.py:263
+#: templates/mitglieder/conversation_view.html:189
+msgid "Gruppen"
+msgstr "Groupes"
+
+#: admin.py:103 models.py:133 models.py:201
+#: templates/mitglieder/conversation_view.html:213
+msgid "Fähigkeiten"
+msgstr "Capacités"
+
+#: admin.py:104 models.py:145 models.py:146 models.py:203 models.py:233
+msgid "Beschäftigung"
+msgstr "Emploi"
+
+#: admin.py:105
+msgid "Fähigkeiten (Beschreibung)"
+msgstr "Capacités (description)"
+
+#: admin.py:106
+msgid "Beschäftigung (Beschreibung)"
+msgstr "Emploi (description)"
+
+#: admin.py:107 models.py:120 models.py:205
+#: templates/mitglieder/conversation_view.html:201
+#, fuzzy
+#| msgid "Mitglieder"
+msgid "Mitgliedschaften"
+msgstr "Membres"
+
+#: admin.py:156
+msgid "Aktivität aktualisieren"
+msgstr "Actualiser les activités"
+
+#: admin.py:192
+msgid "vCards herunterladen"
+msgstr "Télécharger vCards"
+
+#: admin.py:198
+msgid "E-Mail verfassen"
+msgstr "Envoyer un email"
+
+#: admin.py:204
+#, fuzzy
+#| msgid "E-Mail verfassen"
+msgid "E-Mail verfassen (Mailgun)"
+msgstr "Envoyer un email"
+
+#: admin.py:210
+#, fuzzy
+#| msgid "Excel Importieren"
+msgid "Excel exportieren"
+msgstr "Importer en format Excel"
+
+#: admin.py:217 templates/mitglieder/render_letter.html:12 views.py:687
+msgid "Brief generieren"
+msgstr "Générer une lettre"
+
+#: admin.py:224 views.py:285
+msgid "SMS verfassen"
+msgstr "Envoyer un SMS"
+
+#: admin.py:346
+msgid "Öffnungsrate"
+msgstr "Taux d’ouverture"
+
+#: forms.py:32 forms.py:65 models.py:115 models.py:128 models.py:141
+#: models.py:175 templates/mitglieder/conversation_view.html:110
+msgid "Name"
+msgstr "Nom"
+
+#: forms.py:33
+msgid "Absender_in"
+msgstr "Expéditeur"
+
+#: forms.py:35
+msgid "Typ (Medienmitteilung, ...)"
+msgstr "Conseil (Communiqué de presse, …)"
+
+#: forms.py:36 forms.py:153
+msgid "Betreff"
+msgstr "Concerne"
+
+#: forms.py:40 forms.py:160
+msgid "Template"
+msgstr "Modèle"
+
+#: forms.py:49 forms.py:74 models.py:195
+#: templates/mitglieder/conversation_view.html:181
+msgid "Status"
+msgstr "Statut"
+
+#: forms.py:50 models.py:43
+msgid "Kontaktliste"
+msgstr "Liste de contact"
+
+#: forms.py:51 models.py:95
+msgid "Verknüpfung"
+msgstr "Lien"
+
+#: forms.py:52
+msgid "Excel"
+msgstr "Excel"
+
+#: forms.py:54
+msgid "Versionsgeschichte"
+msgstr "Historique des versions"
+
+#: forms.py:55
+msgid "Sollen die Änderungen wieder Rückgängig gemacht werden können?"
+msgstr "Les modifications doivent-elles pouvoir être annulées ?"
+
+#: forms.py:57
+msgid "Löschen"
+msgstr "Supprimer"
+
+#: forms.py:63 models.py:169
+msgid "OM-Nummer"
+msgstr "Numéro-OM"
+
+#: forms.py:64 models.py:52 models.py:173
+#: templates/mitglieder/conversation_view.html:102
+#: templates/mitglieder/send_mail.html:72 templates/mitglieder/send_sms.html:68
+msgid "Vorname"
+msgstr "Prénom"
+
+#: forms.py:66 models.py:54 models.py:177
+#: templates/mitglieder/send_mail.html:87 templates/mitglieder/send_sms.html:83
+msgid "Strasse"
+msgstr "Rue"
+
+#: forms.py:67 models.py:55 models.py:178
+msgid "PLZ"
+msgstr "Code postal"
+
+#: forms.py:68 models.py:56 models.py:179
+#: templates/mitglieder/send_mail.html:97 templates/mitglieder/send_sms.html:93
+msgid "Ort"
+msgstr "Lieux"
+
+#: forms.py:69 models.py:60 models.py:181
+msgid "Land"
+msgstr "Pays"
+
+#: forms.py:70 models.py:61 models.py:188 models.py:351 models.py:394
+#: templates/mitglieder/conversation_view.html:157
+#: templates/mitglieder/mailgun_report.html:153
+#: templates/mitglieder/mailgun_report.html:175
+#: templates/mitglieder/send_mail.html:102
+#: templates/mitglieder/send_sms.html:98 views.py:331
+msgid "E-Mail"
+msgstr "Courriel"
+
+#: forms.py:71 models.py:62 models.py:190
+msgid "Geschlecht"
+msgstr "Sexe"
+
+#: forms.py:72 models.py:63 models.py:192
+#: templates/mitglieder/send_mail.html:107
+#: templates/mitglieder/send_sms.html:103
+msgid "Briefanrede"
+msgstr "Salutations par écrit"
+
+#: forms.py:73 models.py:64 templates/mitglieder/conversation_view.html:173
+msgid "Geburtstag"
+msgstr "Anniversaire"
+
+#: forms.py:75 models.py:183
+msgid "Telefon Privat"
+msgstr "Téléphone privé"
+
+#: forms.py:76 models.py:58 models.py:185
+msgid "Telefon Geschäftlich"
+msgstr "Téléphone professionnel"
+
+#: forms.py:77 models.py:59 models.py:187
+#: templates/mitglieder/conversation_view.html:149
+msgid "Mobil"
+msgstr "Natel"
+
+#: forms.py:84
+msgid "Spalten"
+msgstr ""
+
+#: forms.py:99 forms.py:149
+msgid "Gruppe"
+msgstr "Groupe"
+
+#: forms.py:101 models.py:733
+msgid "Inhalt"
+msgstr "Colonnes"
+
+#: forms.py:128
+msgid "Antwort bestätigt"
+msgstr "Réponse confirmée"
+
+#: forms.py:150
+msgid "Von (Name)"
+msgstr "De (nom)"
+
+#: forms.py:151
+msgid "Von (Email)"
+msgstr "De (courriel)"
+
+#: forms.py:152
+msgid "Tag"
+msgstr "Jour"
+
+#: forms.py:154
+msgid "Header"
+msgstr "En-tête"
+
+#: forms.py:155
+msgid "Punktabzug"
+msgstr "Suppression de point"
+
+#: forms.py:156
+msgid "Öffnungspunkte"
+msgstr "Points d’ouverture"
+
+#: forms.py:157
+msgid "Klickpunkte"
+msgstr "Point de clics"
+
+#: models.py:33
+#, fuzzy
+#| msgid "Gruppen"
+msgid "Sektion/Gruppen"
+msgstr "Groupes"
+
+#: models.py:34
+msgid "Sektionen/Gruppen"
+msgstr "Sections/groupes"
+
+#: models.py:44
+msgid "Kontaktlisten"
+msgstr "Listes de contacts"
+
+#: models.py:51
+#, fuzzy
+#| msgid "OM-Nummer"
+msgid "OM Nummer"
+msgstr "Numéro-OM"
+
+#: models.py:53 templates/mitglieder/send_mail.html:77
+#: templates/mitglieder/send_sms.html:73
+msgid "Nachname"
+msgstr "Nom"
+
+#: models.py:57 templates/mitglieder/conversation_view.html:133
+#, fuzzy
+#| msgid "Telefon Privat"
+msgid "Telefon privat"
+msgstr "Téléphone privé"
+
+#: models.py:66
+msgid "Geburtstag Tag"
+msgstr "Jour de naissance"
+
+#: models.py:67
+msgid "Geburtstag Monat"
+msgstr "Mois de naissance"
+
+#: models.py:68
+msgid "Geburtstag Year"
+msgstr "Année de naissance"
+
+#: models.py:96
+msgid "Verknüpfungen"
+msgstr "Liens"
+
+#: models.py:116 models.py:129 models.py:142
+msgid "Beschreibung"
+msgstr "Description"
+
+#: models.py:119
+#, fuzzy
+#| msgid "Mitglied"
+msgid "Mitgliedschaft"
+msgstr "Membre"
+
+#: models.py:132
+msgid "Fähigkeit"
+msgstr "Capacité"
+
+#: models.py:159
+msgid "Sympi"
+msgstr ""
+
+#: models.py:160 models.py:314
+msgid "Mitglied"
+msgstr "Membre"
+
+#: models.py:161
+msgid "Sonstige"
+msgstr "Autres"
+
+#: models.py:164
+msgid "ALF"
+msgstr "ALF"
+
+#: models.py:165
+msgid "Der Funghi"
+msgstr "Le Funghi"
+
+#: models.py:171 templates/mitglieder/send_mail.html:67
+#: templates/mitglieder/send_sms.html:63
+msgid "Anrede"
+msgstr "Titre"
+
+#: models.py:206
+msgid "Letzte Aktivität"
+msgstr "Dernière activité"
+
+#: models.py:212
+msgid "Mail Aktivität"
+msgstr "Activité de messagerie"
+
+#: models.py:315 views.py:625
+msgid "Mitglieder"
+msgstr "Membres"
+
+#: models.py:346 models.py:387
+msgid "Datum"
+msgstr "Date"
+
+#: models.py:347 models.py:388
+msgid "Zeit"
+msgstr "Heure"
+
+#: models.py:348 models.py:389
+msgid "Text"
+msgstr "Texte"
+
+#: models.py:349 models.py:392
+msgid "Wahrheitswert"
+msgstr "Valeur de logique"
+
+#: models.py:350 models.py:393
+msgid "Zahl"
+msgstr "Nombre"
+
+#: models.py:352 models.py:395 templates/mitglieder/mailgun_report.html:156
+#: templates/mitglieder/mailgun_report.html:178
+msgid "URL"
+msgstr "URL"
+
+#: models.py:353 models.py:396
+msgid "Datei"
+msgstr "Données"
+
+#: models.py:372
+#, fuzzy
+#| msgid "Briefanrede"
+msgid "Brieffeld"
+msgstr "Salutations par écrit"
+
+#: models.py:373
+#, fuzzy
+#| msgid "Briefanrede"
+msgid "Brieffelder"
+msgstr "Salutations par écrit"
+
+#: models.py:379
+#, fuzzy
+#| msgid "Vorlage wählen"
+msgid "Vorlage (.tex)"
+msgstr "Choisir un modèle"
+
+#: models.py:382
+#, fuzzy
+#| msgid "Briefanrede"
+msgid "Briefvorlage"
+msgstr "Salutations par écrit"
+
+#: models.py:383
+msgid "Briefvorlagen"
+msgstr "Modèle de lettre"
+
+#: models.py:390 models.py:431
+msgid "Auswahl"
+msgstr "Choix"
+
+#: models.py:391
+msgid "Mehrfachauswahl"
+msgstr "Choix multiple"
+
+#: models.py:400
+msgid "Passwort-Widget"
+msgstr "Widget de mot de passe"
+
+#: models.py:401
+msgid "Langer Text"
+msgstr "Texte long"
+
+#: models.py:402 models.py:403
+msgid "Select-Widget"
+msgstr "Widget de selection"
+
+#: models.py:404
+msgid "Mehrfach-Select"
+msgstr "Sélection multiple"
+
+#: models.py:405
+msgid "Select-Radio-Widget"
+msgstr "Widget de selection radio"
+
+#: models.py:406
+msgid "Multipleselect Checkbox"
+msgstr "Case de selection multiple"
+
+#: models.py:428
+msgid "Benötigt"
+msgstr "Nécessaire"
+
+#: models.py:429
+msgid "Default"
+msgstr "Default"
+
+#: models.py:431
+msgid "Eine Option pro Zeile"
+msgstr "Une option par ligne"
+
+#: models.py:432
+msgid "Widget"
+msgstr "Widget"
+
+#: models.py:456
+msgid "Formularfeld"
+msgstr "Champ de formulaire"
+
+#: models.py:457
+msgid "Formularfelder"
+msgstr "Champs de formulaire"
+
+#: models.py:475
+msgid "Hintergrund"
+msgstr "Fond"
+
+#: models.py:483
+msgid "Editierbar"
+msgstr "Modifiable"
+
+#: models.py:487
+msgid "# Antworten"
+msgstr "# Réponses"
+
+#: models.py:497
+msgid "<a href='{}'>Resultate anzeigen</a>"
+msgstr "<a href='{}'>Afficher les résultats</a>"
+
+#: models.py:501
+msgid "Resultate"
+msgstr "Résultats"
+
+#: models.py:505
+msgid "<a href=\"{}\">Formular öffnen</a>"
+msgstr "<a href=\"{}\">Ouvrir le formulaire</a>"
+
+#: models.py:506
+msgid "Anzeigen"
+msgstr "Afficher"
+
+#: models.py:509
+msgid "Formular"
+msgstr "Formulaire"
+
+#: models.py:510
+msgid "Formulare"
+msgstr "Formulaires"
+
+#: models.py:526
+msgid "Bestätigt"
+msgstr "Confirmé"
+
+#: models.py:529
+#, python-brace-format
+msgid "Formular Antwort: {self.portal_form} von {self.member}"
+msgstr "Formulaire de réponse: {self.portal_form} de {self.member}"
+
+#: models.py:538
+msgid "Formular Antwort"
+msgstr "Formulaire de réponse"
+
+#: models.py:539
+msgid "Formular Antworten"
+msgstr "Formulaire de réponses"
+
+#: models.py:549
+msgid "Formular-Antwort"
+msgstr "Formulaire de réponse"
+
+#: models.py:550
+msgid "Formular-Antworten"
+msgstr "Formulaire de réponses"
+
+#: models.py:561
+msgid "Twilio-Zugang"
+msgstr "Accès à Twilio"
+
+#: models.py:562
+msgid "Twilio-Zugänge"
+msgstr "Accès à Twilio"
+
+#: models.py:577
+msgid "Mailgun-Zugang"
+msgstr "Accès à Mailgun"
+
+#: models.py:578
+msgid "Mailgun-Zugänge"
+msgstr "Accès à Mailgun"
+
+#: models.py:598
+msgid "Empfänger*innen"
+msgstr "Destinataires"
+
+#: models.py:602
+msgid "Tracking-Mail"
+msgstr "Suivi de courriel"
+
+#: models.py:603
+msgid "Tracking-Mails"
+msgstr "Suivis de courriels"
+
+#: models.py:673
+msgid "<a href=\"{}\">Report anzeigen</a>"
+msgstr "<a href=\"{}\">Afficher le rapport</a>"
+
+#: models.py:729
+msgid "Mail Vorlage"
+msgstr "Modèle de courriel"
+
+#: models.py:730
+#, fuzzy
+#| msgid "E-Mail verfassen"
+msgid "Mail Vorlagen"
+msgstr "Envoyer un email"
+
+#: models.py:735
+msgid "Eingehend"
+msgstr "Entrant"
+
+#: models.py:749
+msgid "<a href=\"{}\">Konversation anzeigen</a>"
+msgstr "<a href=\"{}\">Afficher la conversation</a>"
+
+#: models.py:763 models.py:764
+msgid "SMS"
+msgstr "SMS"
+
+#: templates/admin/base_site.html:8 templates/admin/base_site.html:10
+msgid "Sektionsportal"
+msgstr "Portail de section"
+
+#: templates/admin/base_site.html:36
+msgid "Go"
+msgstr "Go"
+
+#: templates/mitglieder/change_member_list.html:8
+msgid "Excel Importieren"
+msgstr "Importer en format Excel"
+
+#: templates/mitglieder/chose_template.html:9
+#: templates/mitglieder/chose_twilio.html:9
+#: templates/mitglieder/collection_detail.html:5
+#: templates/mitglieder/conversation_view.html:73
+#: templates/mitglieder/import.html:9
+#: templates/mitglieder/mailgun_report.html:57
+#: templates/mitglieder/render_letter.html:9
+#: templates/mitglieder/select_fields.html:9
+#: templates/mitglieder/send_sms.html:9
+#: templates/registration/password_reset_complete.html:6
+#: templates/registration/password_reset_confirm.html:7
+#: templates/registration/password_reset_done.html:6
+#: templates/registration/password_reset_form.html:7
+#: templates/select_fields.html:9
+msgid "Home"
+msgstr "Home"
+
+#: templates/mitglieder/chose_template.html:11
+msgid "Vorlage auswählen"
+msgstr "Choisir le modèle "
+
+#: templates/mitglieder/chose_template.html:16
+msgid "Template auswählen"
+msgstr "Choisir le modèle"
+
+#: templates/mitglieder/chose_twilio.html:13
+#: templates/mitglieder/chose_twilio.html:18
+#, fuzzy
+#| msgid "Vorlage wählen"
+msgid "Twilio Account auswählen"
+msgstr "Choisir un modèle"
+
+#: templates/mitglieder/collection_detail.html:8
+msgid "Projektübersicht"
+msgstr "Aperçu du projet"
+
+#: templates/mitglieder/collection_detail.html:14
+#, python-format
+msgid ""
+"Es fehlen noch %(obj.missing)s Unterschiften, von insgesamt %(obj.needed)s. "
+"Es sind noch %(obj.days)s Tage bis zum Ende der Sammelfrist."
+msgstr ""
+"Il manque encore %(obj.missing)s signatures d’un total de %(obj.needed)s. "
+"Il reste encore %(obj.days)s jours jusqu’au délai de récolte."
+
+#: templates/mitglieder/confirmation.html:10
+msgid "Du hast deine Antwort erfolgreich bearbeitet!"
+msgstr "Tu as traité ta réponse avec succès!"
+
+#: templates/mitglieder/confirmation.html:12
+msgid "Du hast deine Antwort erfolgreich bestätigt!"
+msgstr "Tu as confirmé ta réponse avec succès!"
+
+#: templates/mitglieder/confirmation.html:15
+msgid "Du hast deine Antwort erfolgreich widerrufen!"
+msgstr "Tu as révoqué ta réponse avec succès!"
+
+#: templates/mitglieder/confirmation.html:19
+msgid "Antwort bearbeiten"
+msgstr "Traiter la réponse"
+
+#: templates/mitglieder/confirmation.html:19
+#: templates/mitglieder/confirmation.html:69
+msgid "Antwort widerrufen"
+msgstr "Révoquer la réponse"
+
+#: templates/mitglieder/confirmation.html:19
+msgid "Antwort bestätigen"
+msgstr "Confirmer la réponse"
+
+#: templates/mitglieder/confirmation.html:21
+msgid "Folgende Daten hast du gespeichert"
+msgstr "Tu as sauvegardé les données suivantes"
+
+#: templates/mitglieder/confirmation.html:24
+msgid "und momentan bestätigt"
+msgstr "et confirmé provisoirement"
+
+#: templates/mitglieder/confirmation.html:25
+msgid "und monmentan nicht bestätigt"
+msgstr "non confirmé provisoirement"
+
+#: templates/mitglieder/confirmation.html:31
+msgid "Frage"
+msgstr "Question"
+
+#: templates/mitglieder/confirmation.html:31
+msgid "Anwort"
+msgstr "Réponse"
+
+#: templates/mitglieder/confirmation.html:43
+msgid "Solange du deine Eingaben nicht bestätigt hast, kannst nur diese sehen."
+msgstr "Tant que tu n’as pas confirmé tes saisies, tu ne peux voir que celles-ci"
+
+#: templates/mitglieder/confirmation.html:45
+msgid ""
+"Wenn du deine Eingaben widerrufst, kann sie ausser dir niemand mehr sehen."
+msgstr ""
+"Si tu révoques tes saisies, personne ne peut les voir à part toi."
+
+#: templates/mitglieder/confirmation.html:49
+#: templates/mitglieder/confirmation.html:67
+msgid "Änderungen speichern"
+msgstr "Sauvegarder les modifications"
+
+#: templates/mitglieder/confirmation.html:49
+msgid "Antwort Widerrufen"
+msgstr "Révoquer la réponse"
+
+#: templates/mitglieder/confirmation.html:49
+msgid "Antwort Bestätigen"
+msgstr "Confirmer la réponse"
+
+#: templates/mitglieder/confirmation.html:54
+#: templates/mitglieder/form_result.html:11
+#: templates/mitglieder/form_view.html:21
+msgid "Formular bearbeiten"
+msgstr "Traiter le formulaire"
+
+#: templates/mitglieder/confirmation.html:56
+#: templates/mitglieder/form_view.html:23
+#, fuzzy
+#| msgid "Verlauf anzeigen"
+msgid "Resultate anzeigen"
+msgstr "Voir l’historique"
+
+#: templates/mitglieder/confirmed.html:7
+msgid "Du hast deine Antwort erfolgreich bestätigt, vielen Dank!"
+msgstr "Tu as confirmé ta réponse avec succès, merci!"
+
+#: templates/mitglieder/confirmed.html:9
+msgid "Du hast deine Antwort rückgängig gemacht."
+msgstr "Tu as révoqué ta réponse."
+
+#: templates/mitglieder/confirmed.html:12
+msgid "Wenn du deine Entscheidung ändern möchtest, kannst du das <a href="
+msgstr "Si tu souhaites modifier ta décision, tu peux le faire <a href="
+
+#: templates/mitglieder/conversation_view.html:76 views.py:141 views.py:253
+msgid "Konversation"
+msgstr "Conversation"
+
+#: templates/mitglieder/conversation_view.html:92
+#, fuzzy
+#| msgid "Nachricht"
+msgid "Nachricht abschicken"
+msgstr "Message"
+
+#: templates/mitglieder/conversation_view.html:98
+msgid "Informationen"
+msgstr "Informations"
+
+#: templates/mitglieder/conversation_view.html:117
+#, fuzzy
+#| msgid "Strasse"
+msgid "Stasse"
+msgstr "Rue"
+
+#: templates/mitglieder/conversation_view.html:125
+msgid "PLZ Ort"
+msgstr "NPA Lieu"
+
+#: templates/mitglieder/conversation_view.html:141
+#, fuzzy
+#| msgid "Telefon Geschäftlich"
+msgid "Telefon geschäftlich"
+msgstr "Téléphone professionnel"
+
+#: templates/mitglieder/conversation_view.html:165
+msgid "Gender"
+msgstr "Genre"
+
+#: templates/mitglieder/conversation_view.html:225
+msgid "Beschäftigungen"
+msgstr "Emplois"
+
+#: templates/mitglieder/conversation_view.html:237
+msgid "Aktivitätspunkte"
+msgstr "Points d’activité"
+
+#: templates/mitglieder/conversation_view.html:245
+msgid "Mailaktivität"
+msgstr "Activité de messagerie"
+
+#: templates/mitglieder/form_result.html:10
+msgid "Formular öffnen"
+msgstr "Ouvrir le formulaire"
+
+#: templates/mitglieder/form_view.html:12
+#, python-format
+msgid ""
+"\n"
+"                Bei Fragen wende dich an <a href=\"mailto:"
+"%(portalform.contact_mail)s\">\n"
+"                    %(portalform.contact_name)s\n"
+"                </a>\n"
+"                "
+msgstr "" 
+"\n"
+"                En cas de questions, s’adresser à <a href=\"mailto:"
+"%(portalform.contact_mail)s\">\n"
+"                    %(portalform.contact_name)s\n"
+"                </a>\n"
+"                "
+
+#: templates/mitglieder/form_view.html:30
+msgid "Wenn du deine Antworten anschauen willst, klicke hier:"
+msgstr "Si tu veux consulter tes réponses, cliques ici :"
+
+#: templates/mitglieder/form_view.html:33
+msgid "Link anfordern"
+msgstr "Solliciter le lien"
+
+#: templates/mitglieder/import.html:12
+msgid "Importieren"
+msgstr "Importer"
+
+#: templates/mitglieder/import.html:17
+msgid "Mitgliederliste importieren"
+msgstr "Importer la liste des membres"
+
+#: templates/mitglieder/import.html:19
+msgid "\n"
+msgstr "\n"
+
+#: templates/mitglieder/link_sent.html:6
+msgid "Wir haben dir ein Mail geschickt"
+msgstr "Nous t’avons envoyé un courriel"
+
+#: templates/mitglieder/link_sent.html:7
+msgid ""
+"Klick auf den Link im Mail, um deine Antwort anzuzeigen und zu bestätigen."
+msgstr "Cliques sur le lien dans le courriel pour afficher ta réponse et la confirmer"
+
+#: templates/mitglieder/mailgun_report.html:61
+msgid "Tracking"
+msgstr "Tracking"
+
+#: templates/mitglieder/mailgun_report.html:122
+msgid "Klicks"
+msgstr "Clics"
+
+#: templates/mitglieder/mailgun_report.html:154
+#: templates/mitglieder/mailgun_report.html:176
+msgid "Event"
+msgstr "Événement"
+
+#: templates/mitglieder/mailgun_report.html:155
+#: templates/mitglieder/mailgun_report.html:177
+#, fuzzy
+#| msgid "Zeit"
+msgid "Zeitpunkt"
+msgstr "Heure"
+
+#: templates/mitglieder/mailgun_report.html:188
+msgid "Suche"
+msgstr "Recherche"
+
+#: templates/mitglieder/render_letter.html:17
+msgid "Brief an folgende Personen generieren:"
+msgstr "Créer une lettre à la personne suivante :"
+
+#: templates/mitglieder/select_fields.html:11
+#: templates/mitglieder/select_fields.html:16
+#, fuzzy
+#| msgid "Vorlage wählen"
+msgid "Spalten auswählen"
+msgstr "Choisir un modèle"
+
+#: templates/mitglieder/send_mail.html:18
+msgid "Anleitungen"
+msgstr "Instructions"
+
+#: templates/mitglieder/send_mail.html:22
+msgid "E-Mail an folgende Personen verfassen:"
+msgstr "Rédiger un courriel à la personne suivante :"
+
+#: templates/mitglieder/send_mail.html:23 templates/mitglieder/send_sms.html:20
+msgid "Empfänger"
+msgstr "Destinataire"
+
+#: templates/mitglieder/send_mail.html:57 templates/mitglieder/send_sms.html:53
+#, python-brace-format
+msgid "Verwendung:</b> <pre>{member.anrede}</pre>, <pre>{member.plz}</pre> "
+msgstr "Usage: </b> <pre>{member.anrede}</pre>, <pre>{member.plz}</pre>"
+
+#: templates/mitglieder/send_mail.html:61 templates/mitglieder/send_sms.html:57
+msgid "Code"
+msgstr "Code"
+
+#: templates/mitglieder/send_mail.html:62 templates/mitglieder/send_sms.html:58
+msgid "Bedeutung"
+msgstr "Signification"
+
+#: templates/mitglieder/send_mail.html:63 templates/mitglieder/send_sms.html:59
+msgid "Beispiel"
+msgstr "Exemple"
+
+#: templates/mitglieder/send_mail.html:68 templates/mitglieder/send_sms.html:64
+msgid "Herr/Frau"
+msgstr "Monsieur / Madame"
+
+#: templates/mitglieder/send_mail.html:82 templates/mitglieder/send_sms.html:78
+msgid "Ganzer Name"
+msgstr "Nom complet"
+
+#: templates/mitglieder/send_mail.html:92 templates/mitglieder/send_sms.html:88
+msgid "Postleitzahl"
+msgstr "Code postal"
+
+#: templates/mitglieder/send_mail.html:108
+msgid "Lieber Sandro"
+msgstr "Cher Sandro"
+
+#: templates/mitglieder/send_mail.html:112
+#: templates/mitglieder/send_sms.html:108
+msgid "Handy-Nr"
+msgstr "Numéro de portable"
+
+#: templates/mitglieder/send_sms.html:19
+msgid " SMS an folgende Personen verfassen "
+msgstr "Rédiger un SMS aux personnes suivantes"
+
+#: templates/registration/password_reset_complete.html:7
+#: templates/registration/password_reset_done.html:7
+#: templates/registration/password_reset_form.html:8
+msgid "Password reset"
+msgstr "Password reset"
+
+#: templates/registration/password_reset_complete.html:16
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr "Ton mot de passe a été défini. Tu peux désormais poursuivre et te connecter."
+
+#: templates/registration/password_reset_complete.html:18
+msgid "Log in"
+msgstr "Connexion"
+
+#: templates/registration/password_reset_confirm.html:8
+msgid "Password reset confirmation"
+msgstr "Confirmation de la réinitialisation"
+
+#: templates/registration/password_reset_confirm.html:18
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+"Merci de saisir ton mot de passe deux fois pour nous garantir que ta saisie est correcte."
+
+#: templates/registration/password_reset_confirm.html:24
+msgid "New password:"
+msgstr "Nouveau mot de passe:"
+
+#: templates/registration/password_reset_confirm.html:29
+msgid "Confirm password:"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:32
+msgid "Change my password"
+msgstr "Saisir le mot de passe:"
+
+#: templates/registration/password_reset_confirm.html:38
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+"Le lien pour la réinitialisation du mot de passe n’est pas valable, "
+"probablement parce qu’il a déjà été utilisé."
+"Merci de réinitialiser ton mot de passe."
+
+#: templates/registration/password_reset_done.html:15
+msgid ""
+"We've emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive them shortly."
+msgstr ""
+"Si un compte d’utilisateur-trice est lié à une adresse de messagerie, "
+"tu devrais bientôt recevoir les instructions pour la définition de ton mot de passe."
+
+#: templates/registration/password_reset_done.html:17
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+"Si tu ne devais pas recevoir de courriel, assure-toi d’avoir saisi ton "
+"adresse de messagerie avec laquelle tu t’es inscrit-e, et vérifie dans "
+"le classeur des courriels indésirables."
+
+#: templates/registration/password_reset_form.html:16
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll email "
+"instructions for setting a new one."
+msgstr ""
+"Mot de passe oublié ? Indique ton adresse de messagerie en bas de page et "
+"nous t’enverrons les instructions pour la saisie d’un nouveau mot de passe."
+
+#: templates/registration/password_reset_form.html:21
+msgid "Email address:"
+msgstr "Adresse de messagerie"
+
+#: templates/registration/password_reset_form.html:24
+msgid "Reset my password"
+msgstr "Réinitialiser le mot de passe"
+
+#: templates/select_fields.html:11
+#, fuzzy
+#| msgid "Excel Importieren"
+msgid "Excel Export"
+msgstr "Importer en format Excel"
+
+#: templates/select_fields.html:16
+#, fuzzy
+#| msgid "Vorlage wählen"
+msgid "Felder auswählen"
+msgstr "Choisir un modèle"
+
+#: views.py:175
+#, fuzzy
+#| msgid "SMS verfassen"
+msgid "SMS versandt: {}"
+msgstr "Envoyer un SMS"
+
+#: views.py:583
+#, fuzzy, python-brace-format
+#| msgid "Update erfolgreich, {n} hinzugefügt und {d} gelöscht."
+msgid ""
+"Update erfolgreich, {n} hinzugefügt und {d} gelöscht. (Dauer: {t:.4f} s)"
+msgstr "Mise à jour réussie {n} rapportée et {d} effacée"
+
+#: views.py:601
+msgid "Vorlage wählen"
+msgstr "Choisir un modèle"
+
+#: views.py:652
+#, fuzzy
+#| msgid "Vorlage wählen"
+msgid "Felder wählen"
+msgstr "Choisir un modèle"
+
+#: views.py:722
+msgid "E-Mail (Mailgun)"
+msgstr "Courriel (Mailgun)"
+
+#: views.py:891
+msgid " Resultate"
+msgstr "Résultats"
+
+#~ msgid "Kampagne"
+#~ msgstr "Campagne"
+
+#~ msgid "Gesamtbetrag"
+#~ msgstr "Total"
+
+#~ msgid "Mitgliederbeitrag bezahlt"
+#~ msgstr "Cotisation payée"
+
+#~ msgid "Projektname"
+#~ msgstr "Nom du projet"
+
+#~ msgid "Start der Sammelfrist"
+#~ msgstr "Début de la phase de récolte"
+
+#~ msgid "Ablauf der Sammelfrist"
+#~ msgstr "Déroulement de la phase de récolte"
+
+#~ msgid "Benötigte Unterschriften"
+#~ msgstr "Signatures nécessaires"
+
+#~ msgid "Welcome,"
+#~ msgstr "Bienvenue"
+
+#, fuzzy
+#~| msgid "Mitgliederbeitrag bezahlt"
+#~ msgid "Mitgliederverwaltung"
+#~ msgstr "Cotisation payée"

@@ -1,0 +1,50 @@
+{% extends 'admin/base_site.html' %}
+{% load i18n %}
+{% block extrahead %}
+{{block.super}}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.2.1/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/datatables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/datatables.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<a class="btn btn-primary" href="{% url 'form-view' slug=form.slug %}">{% trans "Formular öffnen" %}</a> 
+<a class="btn btn-primary" href="{% url 'admin:mitglieder_portalform_change' form.pk %}">{% trans "Formular bearbeiten"%}</a>
+<hr>
+<table id="results" class="display">
+    <thead>
+        <tr>
+            {% for field in fields %}
+            <th>{{field.label}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for answer in answers %}
+        <tr>
+            {% for field in answer %}
+            <td>{{field}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<script>
+    $(document).ready( function () {
+        $('#results').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'collection',
+                    text: 'Export',
+                    buttons: [
+                        'copy',
+                        'excel',
+                        'csv',
+                        'pdf',
+                    ]
+                }
+            ]}
+        );
+    } );
+</script>
+{% endblock %}

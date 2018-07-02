@@ -1,0 +1,15 @@
+{% extends 'mitglieder/form_base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="form">
+    <h3>Antwort {% if answer.confirmed %}bestätigt{% else %}widerrufen{% endif %}</h3>
+    {% if answer.confirmed %}
+    <p>{% trans "Du hast deine Antwort erfolgreich bestätigt, vielen Dank!"%}</p>
+    {% else %}
+    <p>{% trans "Du hast deine Antwort rückgängig gemacht."%}</p>
+    {% endif %}
+    <p>
+    {% trans "Wenn du deine Entscheidung ändern möchtest, kannst du das <a href="">hier</a> tun." %}
+    </p>
+</div>
+{% endblock content%}

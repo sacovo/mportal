@@ -1,0 +1,13 @@
+{% extends "reversion/change_list.html" %}
+{% load i18n admin_urls %}
+
+{% block object-tools-items %}
+{% if has_add_permission %}
+<li>
+  <a href="{% url 'import' %}">
+    {% blocktrans with cl.opts.verbose_name as name %}Excel Importieren{% endblocktrans %}
+  </a>
+</li>
+{{block.super}}
+{% endif %}
+{% endblock %}
