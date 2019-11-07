@@ -55,7 +55,7 @@ PySocks==1.6.5
 python-dateutil==2.6.0
 pytz==2016.10
 redis==2.10.5
-requests==2.18.1
+requests==2.20.0
 SecretStorage==2.3.1
 shutilwhich==1.1.0
 simplejson==3.6.5
