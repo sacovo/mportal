@@ -44,7 +44,7 @@ latex==0.6.4
 lxml==4.6.5
 Markdown==2.6.7
 nbformat==4.4.0
-numpy==1.21.0
+numpy==1.22.0
 openpyxl==2.4.1
 pandas==0.20.3
 plotly==2.5.1
